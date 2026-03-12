@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Enums.NotificationChannels.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Enums.NotificationChannels\Soenneker.Enums.NotificationChannels.csproj" />
     </ItemGroup>
 
     <ItemGroup>
