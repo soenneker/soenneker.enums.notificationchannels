@@ -1,10 +1,9 @@
-﻿using Xunit;
 
 namespace Soenneker.Enums.NotificationChannels.Tests;
 
 public sealed class NotificationChannelTests
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
