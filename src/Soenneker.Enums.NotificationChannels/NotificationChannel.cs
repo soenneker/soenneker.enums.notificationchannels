@@ -8,6 +8,12 @@ namespace Soenneker.Enums.NotificationChannels;
 [EnumValue<string>]
 public sealed partial class NotificationChannel
 {
+    /// <summary>
+    /// The errors.
+    /// </summary>
     public static readonly NotificationChannel Errors = new(nameof(Errors));
+    /// <summary>
+    /// The notifications.
+    /// </summary>
     public static readonly NotificationChannel Notifications = new(nameof(Notifications));
 }
