@@ -3,17 +3,17 @@ using Soenneker.Gen.EnumValues;
 namespace Soenneker.Enums.NotificationChannels;
 
 /// <summary>
-/// An enumeration of common notification channels
+/// Identifies the destination channel used to categorize operational messages.
 /// </summary>
 [EnumValue<string>]
 public sealed partial class NotificationChannel
 {
     /// <summary>
-    /// The errors.
+    /// Error and failure notifications requiring investigation.
     /// </summary>
     public static readonly NotificationChannel Errors = new(nameof(Errors));
     /// <summary>
-    /// The notifications.
+    /// General informational and operational notifications.
     /// </summary>
     public static readonly NotificationChannel Notifications = new(nameof(Notifications));
 }
