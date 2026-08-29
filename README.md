@@ -3,11 +3,23 @@
 [![](https://img.shields.io/nuget/dt/soenneker.enums.notificationchannels.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.enums.notificationchannels/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.enums.notificationchannels/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.enums.notificationchannels/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Enums.NotificationChannels
-### An enumeration of common notification channels
+# Soenneker.Enums.NotificationChannels
 
-## Installation
+Identifies the destination channel used to categorize operational messages.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Enums.NotificationChannels
 ```
+
+## What you get
+
+- `NotificationChannel` — Identifies the destination channel used to categorize operational messages.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `NotificationChannel.Errors` | Error and failure notifications requiring investigation. | Error and failure notifications requiring investigation. |
+| `NotificationChannel.Notifications` | General informational and operational notifications. | General informational and operational notifications. |
