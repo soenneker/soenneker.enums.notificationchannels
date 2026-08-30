@@ -5,7 +5,7 @@
 
 # Soenneker.Enums.NotificationChannels
 
-Identifies the destination channel used to categorize operational messages.
+A string-backed enum-value type for routing operational messages to an error or general-notification channel.
 
 ## Install
 
@@ -13,13 +13,25 @@ Identifies the destination channel used to categorize operational messages.
 dotnet add package Soenneker.Enums.NotificationChannels
 ```
 
-## What you get
+## Usage
 
-- `NotificationChannel` — Identifies the destination channel used to categorize operational messages.
+```csharp
+using Soenneker.Enums.NotificationChannels;
 
-## API at a glance
+NotificationChannel channel = NotificationChannel.Errors;
+string wireValue = channel.Value; // "Errors"
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `NotificationChannel.Errors` | Error and failure notifications requiring investigation. | Error and failure notifications requiring investigation. |
-| `NotificationChannel.Notifications` | General informational and operational notifications. | General informational and operational notifications. |
+if (NotificationChannel.TryFromValue(input, out NotificationChannel? parsed))
+{
+    // Resolve parsed to a destination in your notification configuration
+}
+```
+
+Available values:
+
+- `Errors` — failures that need investigation
+- `Notifications` — general informational and operational messages
+
+`System.Text.Json` serializes the type as its string value and restores recognized values to the shared static instances. `FromValue` throws for unknown input; use `TryFromValue` at configuration or request boundaries. `FromName` and `TryFromName` are also generated.
+
+These are logical categories, not provider channel IDs, URLs, email addresses, or queues. The consuming application must map each value to a destination and define delivery, retry, deduplication, and escalation behavior. Do not include secrets or sensitive payload data merely because a message is routed to `Errors`.
